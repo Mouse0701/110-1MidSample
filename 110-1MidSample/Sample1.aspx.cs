@@ -52,7 +52,7 @@ namespace _110_1MidSample {
             string s_Url = HttpContext.Current.Server.MapPath("~") + "Images/";
             string s_FileName = DateTime.Now.ToString("mmddyyyy_hhmmss") + ".png";
             string s_Path = s_Url + DateTime.Now.ToString("mmddyyyy_hhmmss") + ".png";
-           // o_IS.Save(s_Path, System.Drawing.Imaging.ImageFormat.Png);
+            o_IS.Save(s_Path, System.Drawing.Imaging.ImageFormat.Png);
             o_Ig.ImageUrl = "~/Images/" + s_FileName;
 
             o_TextBrush.Dispose();

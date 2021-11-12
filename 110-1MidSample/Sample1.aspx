@@ -12,7 +12,7 @@
         <div> 
             <h2>會員註冊</h2>
             <p style="font-size: x-large">手機電話(帳號)<asp:TextBox ID="tb_CellPhone" runat="server" Height="15px" Width="200px"></asp:TextBox></p>
-            <p style="font-size: x-large">密碼<asp:TextBox ID="tb_Ps" runat="server" Height="15px" Width="200px" TextMode="Password"></asp:TextBox><asp:ImageButton ID="ImageButton1" runat="server" Height="30" Width="30" ImageUrl="eye-slash-solid.svg" OnClick="ImageButton1_Click" /></p>
+            <p style="font-size: x-large">密碼<asp:TextBox ID="tb_Ps" runat="server" Height="15px" Width="200px" TextMode="Password"></asp:TextBox><asp:ImageButton ID="ImageButton1" runat="server" Height="30" Width="30" ImageUrl="eye-slash-solid.svg" OnClick="ImageButton1_Click"/></p>
             <p style="font-size: x-large">生理性別<asp:RadioButtonList ID="rb_Gender" runat="server" RepeatDirection="Horizontal" RepeatLayout="Flow">
                 <asp:ListItem>男</asp:ListItem>
                 <asp:ListItem>女</asp:ListItem>
