@@ -7,10 +7,15 @@ using System.Web.UI.WebControls;
 
 namespace _110_1MidSample {
     public partial class Sample1 : System.Web.UI.Page {
-        protected void Page_Load(object sender, EventArgs e) {
-            
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (IsPostBack==false)
+            {
+                string s_num = mt_GenVeriStr();
+                mt_ImgPointer(ref ig_Num, s_num);
+                hd_Num.Value = mt_2MD5(s_num);
+            }
         }
-
         // To generate a 4 digital number
         public string mt_GenVeriStr() {
             string s_Res = "";
@@ -47,7 +52,7 @@ namespace _110_1MidSample {
             string s_Url = HttpContext.Current.Server.MapPath("~") + "Images/";
             string s_FileName = DateTime.Now.ToString("mmddyyyy_hhmmss") + ".png";
             string s_Path = s_Url + DateTime.Now.ToString("mmddyyyy_hhmmss") + ".png";
-            o_IS.Save(s_Path, System.Drawing.Imaging.ImageFormat.Png);
+           // o_IS.Save(s_Path, System.Drawing.Imaging.ImageFormat.Png);
             o_Ig.ImageUrl = "~/Images/" + s_FileName;
 
             o_TextBrush.Dispose();
@@ -66,5 +71,22 @@ namespace _110_1MidSample {
                 .ToUpper();
             return s_Md5;
         }
+        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        {
+            string temp = tb_Ps.Text;
+            if (ImageButton1.ImageUrl == "eye-slash-solid.svg")
+            {
+                ImageButton1.ImageUrl = "eye-solid.svg";
+                tb_Ps.TextMode = TextBoxMode.SingleLine;
+            }
+            else if (ImageButton1.ImageUrl == "eye-solid.svg")
+            {
+                ImageButton1.ImageUrl = "eye-slash-solid.svg";
+                tb_Ps.Attributes.Add("value", temp);
+                tb_Ps.TextMode = TextBoxMode.Password;
+            }
+        }
     }
+
+    
 }

@@ -8,7 +8,16 @@ using System.Web.UI.WebControls;
 namespace _110_1MidSample {
     public partial class Sample1Com : System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e) {
-
+            string temp = "";
+            string number = Request.Form.Get("tb_Num");
+            temp += Request.Form.Get("tb_CellPhone") + "<br/>";
+            temp += Request.Form.Get("tb_Ps") + "<br/>";
+            temp += Request.Form.Get("rb_Gender") + "<br/>";
+            temp += Request.Form.Get("tb_Num") + "<br/>";
+            temp += Request.Form.Get("hd_Num") + "<br/>";
+            temp += mt_2MD5(number);
+            // 驗證碼 md5編碼 Password
+            lb_Msg.Text = temp;
         }
 
         // To convert a plain-text string into a md5 string

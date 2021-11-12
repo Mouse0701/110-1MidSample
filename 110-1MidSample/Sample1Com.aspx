@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Sample1Com.aspx.cs" Inherits="_110_1MidSample.Sample1Com" %>
+﻿
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Sample1Com.aspx.cs" Inherits="_110_1MidSample.Sample1Com" %>
 
 <!DOCTYPE html>
 
@@ -10,6 +11,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
+                        <asp:Label ID="lb_Msg" runat="server" Text=""></asp:Label>
         </div>
     </form>
 </body>
